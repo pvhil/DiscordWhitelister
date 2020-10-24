@@ -1,4 +1,4 @@
-# DiscordWhitelister
+# DiscordWhitelister (Right now only GERMAN!)
 A easy Discord Bot which adds Minecraft Players to your Minecraft Whitelist.
 This Minecraft Plugin/Discord Bot is my first functional code written.
 # Installation
