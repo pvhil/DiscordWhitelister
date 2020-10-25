@@ -16,12 +16,12 @@ public class DiscordListener extends ListenerAdapter implements EventListener, L
 
         if (args[0].equalsIgnoreCase("whitelist")) {
             if (args.length < 2) {
-                event.getChannel().sendMessage("Dein Minecraft Name fehlt!").queue();
+                event.getChannel().sendMessage(main.errorDc).queue();
             } else {
                 savedArgs = args[1];
                 EmbedBuilder info = new EmbedBuilder();
-                info.setTitle("User " + savedArgs + " wurde hinzugefuegt!");
-                info.setDescription("Viel Spaß beim Spielen!");
+                info.setTitle("User " + savedArgs + " "+ main.titleDc);
+                info.setDescription(main.descDc);
                 info.setThumbnail("https://minotar.net/armor/bust/"+savedArgs+"/100.png");
                 info.setColor(0x55eb34);
 

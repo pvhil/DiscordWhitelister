@@ -5,6 +5,12 @@ public class FileManager {
 
     public static void loadFile() {
         setValue("settings.discordkey", "BOTTOKEN");
+        setValue("//languages: de and en, Type custom in lang if your want to use custom text", "//");
+        setValue("lang", "en");
+        setValue("errorDc","custom discord error(your minecraft name is missing)");
+        setValue("titleDc","custom title");
+        setValue("descDc","custom description");
+
     }
 
     private static void setValue(final String valuePath, final String value){
@@ -13,8 +19,8 @@ public class FileManager {
             fileWriter.save();
 
         }
-
     }
+
     public static Object getValue(final String valuePath){
         return fileWriter.getObject(valuePath);
     }
