@@ -7,13 +7,13 @@ import net.dv8tion.jda.api.hooks.EventListener;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import pvhil.whitelister.other.Metrics;
 
 import javax.security.auth.login.LoginException;
-
 import java.util.Objects;
 
 import static net.dv8tion.jda.api.JDABuilder.createDefault;
@@ -24,8 +24,6 @@ public class main extends JavaPlugin implements EventListener, Listener {
     public static String titleDc;
     public static String descDc;
     public static String errorDc;
-
-
     private static main tutorial;
 
     @Override
@@ -63,8 +61,6 @@ public class main extends JavaPlugin implements EventListener, Listener {
             descDc = getConfig().getString("descDc");
             errorDc = getConfig().getString("errorDc");
         }
-
-
         System.out.println("Plugin started (discord)");
     }
     public static main getTutorial(){
@@ -72,8 +68,13 @@ public class main extends JavaPlugin implements EventListener, Listener {
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerLoginEvent event) {
-        discordBot.getPresence().setActivity(Activity.watching(Bukkit.getServer().getOnlinePlayers().size()+" Spieler sind online!"));
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        discordBot.getPresence().setActivity(Activity.watching(Bukkit.getServer().getOnlinePlayers().size()+" Players Online!"));
+    }
+
+    @EventHandler
+    public void onPlayerLeave(PlayerQuitEvent event) {
+        discordBot.getPresence().setActivity(Activity.watching(Bukkit.getServer().getOnlinePlayers().size()  + " Players Online!"));
     }
 
     @Override
@@ -82,7 +83,6 @@ public class main extends JavaPlugin implements EventListener, Listener {
         titleDc =  null;
         descDc = null;
         errorDc = null;
-
     }
 
     @Override

@@ -10,7 +10,6 @@ public class DiscordListener extends ListenerAdapter implements EventListener, L
 
     public static String savedArgs;
 
-
     public void onMessageReceived(MessageReceivedEvent event) {
         java.lang.String[] args = event.getMessage().getContentRaw().split("\\s+");
 
@@ -32,8 +31,6 @@ public class DiscordListener extends ListenerAdapter implements EventListener, L
 
             }
         }
-
-
     }
 }
 
