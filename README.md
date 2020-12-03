@@ -1,4 +1,7 @@
 # DiscordWhitelister
+[![Donate](https://img.shields.io/badge/Paypal-donate-blue.svg)](https://www.paypal.me/m4rk12)
+[![Discord](https://img.shields.io/discord/742408927022546975?label=Discord)](https://discord.gg/DUuCMgXDJC)  
+  
 A easy Discord Bot which adds Minecraft Players to your Minecraft Whitelist.
 This Minecraft Plugin/Discord Bot is my first functional code written.
 Supports German, English and a custom language!
