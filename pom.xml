@@ -30,6 +30,11 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.1.0</version>
                 <executions>
@@ -53,6 +58,7 @@
         </resources>
     </build>
 
+
     <repositories>
         <repository>
             <id>spigotmc-repo</id>
@@ -74,12 +80,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>net.dv8tion</groupId>
-            <artifactId>JDA</artifactId>
-            <version>4.2.0_209</version>
-            <type>pom</type>
-        </dependency>
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>

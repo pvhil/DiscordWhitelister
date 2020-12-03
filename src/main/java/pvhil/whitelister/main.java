@@ -1,14 +1,9 @@
 package pvhil.whitelister;
 
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.events.GenericEvent;
 import net.dv8tion.jda.api.hooks.EventListener;
-import org.bukkit.Bukkit;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import pvhil.whitelister.other.Metrics;
@@ -67,15 +62,6 @@ public class main extends JavaPlugin implements EventListener, Listener {
         return tutorial;
     }
 
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        discordBot.getPresence().setActivity(Activity.watching(Bukkit.getServer().getOnlinePlayers().size()+" Players Online!"));
-    }
-
-    @EventHandler
-    public void onPlayerLeave(PlayerQuitEvent event) {
-        discordBot.getPresence().setActivity(Activity.watching(Bukkit.getServer().getOnlinePlayers().size()  + " Players Online!"));
-    }
 
     @Override
     public void onDisable() {
