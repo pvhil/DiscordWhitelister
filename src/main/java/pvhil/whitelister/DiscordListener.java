@@ -20,6 +20,13 @@ public class DiscordListener extends ListenerAdapter implements EventListener, L
             if (args.length < 2) {
                 event.getChannel().sendMessage(main.errorDc).queue();
             } else {
+                if (main.whPerm) {
+                    if (!Objects.requireNonNull(event.getMember()).hasPermission(Permission.MANAGE_ROLES)) {
+                        event.getChannel().sendMessage(main.permDc).queue();
+                        return;
+                    }
+                }
+
                 savedArgs = args[1];
                 EmbedBuilder info = new EmbedBuilder();
                 info.setTitle("User " + savedArgs + " " + main.titleDc);
@@ -38,14 +45,17 @@ public class DiscordListener extends ListenerAdapter implements EventListener, L
             if (args.length < 2) {
                 event.getChannel().sendMessage(main.errorDc).queue();
             } else {
-                if (!Objects.requireNonNull(event.getMember()).hasPermission(Permission.MANAGE_ROLES)) {
-                    event.getChannel().sendMessage("You dont have enough Permissions (You need Manage Roles rights!)").queue();
+                if (main.blPerm) {
+                    if (!Objects.requireNonNull(event.getMember()).hasPermission(Permission.MANAGE_ROLES)) {
+                        event.getChannel().sendMessage(main.permDc).queue();
+                        return;
+                    }
                 }
 
                 savedArgs = args[1];
                 EmbedBuilder info = new EmbedBuilder();
-                info.setTitle("User " + savedArgs + " " + "removed from whitelist");
-                info.setDescription("Player cant join if whitelist is on");
+                info.setTitle("User " + savedArgs + " " + main.remtitleDc);
+                info.setDescription(main.remdescDc);
                 info.setThumbnail("https://minotar.net/armor/bust/" + savedArgs + "/100.png");
                 info.setColor(0xeb4634);
 
@@ -56,6 +66,6 @@ public class DiscordListener extends ListenerAdapter implements EventListener, L
             }
         }
     }
-    }
+}
 
 

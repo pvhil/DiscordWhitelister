@@ -1,0 +1,15 @@
+# 'all': everybody can whitelist user / 'admin': only people with "MANAGE_ROLES" can whitelist people
+# languages: de and en, Type custom in lang if your want to use custom text
+discordkey: token
+whitelistperm: all
+blacklistperm: all
+
+lang: en
+
+errorDc: custom discord error(your minecraft name is missing)
+titleDc: custom title
+descDc: custom description
+noPerms: custom error Message (permissions)
+removetitleDc: custom remove msg
+removedescDc: custom remove description
+version: alpha4.0

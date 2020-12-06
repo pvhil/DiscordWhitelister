@@ -1,4 +1,5 @@
 name: DiscordWhitelister
-version: alpha2.0
+version: alpha4.0
 main: pvhil.whitelister.main
 api-version: 1.13
+website: github.com/pvhil
